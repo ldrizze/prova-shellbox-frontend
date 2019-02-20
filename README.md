@@ -4,6 +4,7 @@ Este projeto é parte de um modelo de avaliação e recrutamento de desenvolvedo
 A avaliação consiste na reprodução de uma **aplicação** e um **serviço web** `to do list` com a utilização obrigatória das tecnologias Angular 2+, NodeJs e MySQL.
 
 #### Critérios de Avaliação
+
 - Organização de código
 - Documentação de código
 - Boas práticas de desenvolvimento
@@ -12,12 +13,14 @@ A avaliação consiste na reprodução de uma **aplicação** e um **serviço we
 - Realização das features não obrigatórias
 
 #### Features obrigatórias
+
 - Adicionar uma nova task
 - Listar tasks
   - Utilizar paginação com **10 itens por página**
 
 #### Features não obrigatórias
 Estas features podem ser implementadas e serão avaliadas como pontuação extra.
+
 - Editar task
 - Remover tasks
 - Pesquisar por uma task
@@ -34,6 +37,7 @@ Estas features podem ser implementadas e serão avaliadas como pontuação extra
 
 
 ## Ambiente (Somente para maquinas Raizen)
+
 - Sistema Operacional: Windows 10 - 64 bits
 - Node JS: 6.11.1
 - Angular/Cli: 1.2.3
@@ -45,7 +49,8 @@ Estas features podem ser implementadas e serão avaliadas como pontuação extra
 ## Entrega
 Como resultado da prova prática, o candidato deverá enviar um email para `alberto.neto@raizen.com` com os respectivos links:
 
-- Link do github do serviço NodeJs
+- Link do bitbucket do serviço NodeJs
+- Link do bitbucket (fork) da aplicação Prova To Do
 
 ## Screenshot
 ![demo](https://bytebucket.org/acelera/prova-todo/raw/f420c83de0d8519548e717dd882d3a6287f0f3fa/demo.png)
