@@ -27,7 +27,7 @@ Estas features podem ser implementadas e serão avaliadas como pontuação extra
 
 ## Importante
 - O sistema deverá ser composto por uma aplicação `Angular 2+` que consumirá um serviço `NodeJS + MySQL`.
-- O banco de dados deverá seguir a normalização de dados na 2FN (Segunda Forma Normal)
+- O banco de dados deverá seguir a normalização de dados na `2FN` (Segunda Forma Normal)
 - O candidato poderá utilizar a internet para consultar documentação dos frameworks e ferramentas aqui citadas
 - Não é permitido sobre qualquer hipótese consultar outras pessoas
 - Não é permitido sobre qualquer hipótese consultar códigos prontos
