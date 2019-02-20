@@ -48,4 +48,4 @@ Como resultado da prova prática, o candidato deverá enviar um email para `albe
 - Link do github do serviço NodeJs
 
 ## Screenshot
-![demo](http://i.imgur.com/xmGi1ot.png)
+![demo](https://bytebucket.org/acelera/prova-todo/raw/f420c83de0d8519548e717dd882d3a6287f0f3fa/demo.png)
