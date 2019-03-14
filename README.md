@@ -1,56 +1,27 @@
-Este projeto é parte de um modelo de avaliação e recrutamento de desenvolvedores para o Projeto `Shell Box`. Sendo assim, o software em questão não será utilizado pela mesma para fins lucrativos.
+# ShellClient
 
-## Avaliação
-A avaliação consiste na reprodução de uma **aplicação** e um **serviço web** `to do list` com a utilização obrigatória das tecnologias Angular 2+, NodeJs e MySQL.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
 
-#### Critérios de Avaliação
+## Development server
 
-- Organização de código
-- Documentação de código
-- Boas práticas de desenvolvimento
-- Técnicas de perfomance
-- Realização das features obrigatórias
-- Realização das features não obrigatórias
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-#### Features obrigatórias
+## Code scaffolding
 
-- Adicionar uma nova task
-- Listar tasks
-  - Utilizar paginação com **10 itens por página**
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-#### Features não obrigatórias
-Estas features podem ser implementadas e serão avaliadas como pontuação extra.
+## Build
 
-- Editar task
-- Remover tasks
-- Pesquisar por uma task
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Importante
-- O sistema deverá ser composto por uma aplicação `Angular 2+` que consumirá um serviço `NodeJS + MySQL`.
-- O banco de dados deverá seguir a normalização de dados na `2FN` (Segunda Forma Normal)
-- O candidato poderá utilizar a internet para consultar documentação dos frameworks e ferramentas aqui citadas
-- Não é permitido sobre qualquer hipótese consultar outras pessoas
-- Não é permitido sobre qualquer hipótese consultar códigos prontos
-- O candidato poderá adicionar novos elementos visuais e funcionais que possa contribuir para aumentar a sua pontuação
-- É permitido altenar sobre framework CSS/HTML, por padrão o [UIKit](https://getuikit.com/v2/) foi utilizado para a construção da aplicação base
-- Hora de início e término da prova prática será determinada pelos entrevistadores no momento da entrevista
+## Running unit tests
 
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Ambiente (Somente para maquinas Raizen)
+## Running end-to-end tests
 
-- Sistema Operacional: Windows 10 - 64 bits
-- Node JS: 6.11.1
-- Angular/Cli: 1.2.3
-- MySQL: 8.0
-- GitKraken: 2.7
-- Visual Studio Code: 1.14.2
-- Postman 5.0.2
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Entrega
-Como resultado da prova prática, o candidato deverá enviar um email para `alberto.neto@raizen.com` com os respectivos links:
+## Further help
 
-- Link do bitbucket do serviço NodeJs
-- Link do bitbucket (fork) da aplicação Prova To Do
-
-## Screenshot
-![demo](https://bytebucket.org/acelera/prova-todo/raw/f420c83de0d8519548e717dd882d3a6287f0f3fa/demo.png)
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

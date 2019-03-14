@@ -1,0 +1,16 @@
+<section class="wrapper">
+    <mat-toolbar>
+        <span *ngIf="!modeAdd">Todo Tasks!</span>
+        <span class="fill"></span>
+        <button mat-icon-button (click)="toggleNewTask()" color="primary" *ngIf="!modeAdd">
+            <mat-icon>add_circle</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="toggleNewTask()" *ngIf="modeAdd">
+            <mat-icon>cancel</mat-icon>
+        </button>
+    </mat-toolbar>
+    <mat-list>
+        <mat-list-item *ngFor="let task of tasks">{{ task.title }}</mat-list-item>
+    </mat-list>
+    <mat-paginator [pageSize]="10" [hidePageSize]="true" [length]="tasks.length" (page)="onPageChange($event)"></mat-paginator>
+</section>
