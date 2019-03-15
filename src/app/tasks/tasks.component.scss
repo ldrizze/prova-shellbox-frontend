@@ -7,11 +7,18 @@ section.wrapper{
 
     .mat-list{
         background: white;
+
+        .mat-list-item{
+            color: #3D3D3D;
+        }
     }
 
     .fill {
         /* This fills the remaining space, by using flexbox.
          Every toolbar row uses a flexbox row layout. */
         flex: 1 1 auto;
+    }
+    .ff{
+        min-width: 220px;
     }
 }

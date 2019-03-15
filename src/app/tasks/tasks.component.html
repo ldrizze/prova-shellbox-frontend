@@ -1,16 +1,40 @@
 <section class="wrapper">
     <mat-toolbar>
-        <span *ngIf="!modeAdd">Todo Tasks!</span>
+        <!-- Title and inputs -->
+        <div>
+            <span *ngIf="!modeAdd">Todo Tasks!</span>
+            <mat-form-field class="ff" *ngIf="modeAdd"><input [(ngModel)]="taskName" matInput placeholder="Insira o nome da tarefa" type="text"></mat-form-field>
+        </div>
+
+        <!-- Flex -->
         <span class="fill"></span>
-        <button mat-icon-button (click)="toggleNewTask()" color="primary" *ngIf="!modeAdd">
-            <mat-icon>add_circle</mat-icon>
-        </button>
-        <button mat-icon-button color="warn" (click)="toggleNewTask()" *ngIf="modeAdd">
-            <mat-icon>cancel</mat-icon>
-        </button>
+
+        <!-- Buttons -->
+        <div>
+            <button mat-icon-button (click)="toggleNewTask()" color="accent" *ngIf="!modeAdd">
+                <mat-icon>add_circle</mat-icon>
+            </button>
+            <button mat-icon-button color="accent" (click)="addTask()" *ngIf="modeAdd">
+                <mat-icon>check</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="toggleNewTask()" *ngIf="modeAdd">
+                <mat-icon>cancel</mat-icon>
+            </button>
+        </div>
     </mat-toolbar>
     <mat-list>
-        <mat-list-item *ngFor="let task of tasks">{{ task.title }}</mat-list-item>
+        <mat-list-item *ngFor="let task of tasks">
+            <div>{{ task.title }}</div>
+            <span class="fill"></span>
+            <div>
+                <button mat-icon-button color="primary">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="warn">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </mat-list-item>
     </mat-list>
-    <mat-paginator [pageSize]="10" [hidePageSize]="true" [length]="tasks.length" (page)="onPageChange($event)"></mat-paginator>
+    <mat-paginator #paginator [pageSize]="10" [hidePageSize]="true" [length]="totalTasks" (page)="onPageChange($event)"></mat-paginator>
 </section>

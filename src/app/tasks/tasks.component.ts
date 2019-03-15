@@ -1,8 +1,8 @@
-import { Component, OnInit, OnChanges, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnChanges, EventEmitter, ViewChild } from '@angular/core';
 import { TaskService } from '../task.service';
 import { of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { PageEvent } from '@angular/material';
+import { PageEvent, MatPaginator } from '@angular/material';
 
 @Component({
   selector: 'app-tasks',
@@ -11,7 +11,12 @@ import { PageEvent } from '@angular/material';
 })
 export class TasksComponent implements OnInit, OnChanges {
     private tasks:Array<{}> = [];
-    private modeAdd:boolean = true;
+    private modeAdd:boolean = false;
+    private totalTasks:number = 0;
+    private taskID:number = 0;
+    private taskName:string = '';
+
+    @ViewChild('paginator') private paginator:MatPaginator;
 
     constructor(private _ts:TaskService) {
     }
@@ -24,12 +29,15 @@ export class TasksComponent implements OnInit, OnChanges {
     ngOnChanges(){
     }
 
-    onGetTasks(data){
-        if(data.status = 200) this.tasks = data.body;
+    onGetTasks(data){ // Tasks callback
+        if(data.status = 200){
+            this.tasks = data.body.rows;
+            this.totalTasks = data.body.count;
+        }
     }
 
-    onError(error){
-
+    onError(error){ // LOG ERROR
+        console.error(error);
     }
 
     onPageChange(event){
@@ -39,6 +47,22 @@ export class TasksComponent implements OnInit, OnChanges {
 
     toggleNewTask(){
         this.modeAdd = !this.modeAdd;
+        if(this.modeAdd != true) this.taskName = ''; // Clear task name
+    }
+
+    addTask(){
+        this._ts.create(this.taskName)
+        .subscribe(data => {
+            let response:any = data;
+            console.log(response);
+            if(response == "Created"){
+                this.onPageChange({ pageIndex: this.paginator.pageIndex });
+                this.toggleNewTask();
+                this.taskName = '';
+            }
+        }, err => {
+            console.error(err);
+        });
     }
 
 }

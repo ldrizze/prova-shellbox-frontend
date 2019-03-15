@@ -16,4 +16,17 @@ export class TaskService {
           observe: 'response'
       });
   }
+
+  create(title){
+      return this.http.post<string>(
+          this.url,
+          JSON.stringify({title : title}),
+          {
+              responseType: 'text',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+          } as any
+      );
+  }
 }
