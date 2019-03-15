@@ -3,7 +3,7 @@
         <!-- Title and inputs -->
         <div>
             <span *ngIf="!modeAdd">Todo Tasks!</span>
-            <mat-form-field class="ff" *ngIf="modeAdd"><input [(ngModel)]="taskName" matInput placeholder="Insira o nome da tarefa" type="text"></mat-form-field>
+            <mat-form-field class="ff" [hidden]="!modeAdd"><input #tinput [(ngModel)]="taskName" matInput placeholder="Insira o nome da tarefa" type="text"></mat-form-field>
         </div>
 
         <!-- Flex -->
@@ -27,10 +27,10 @@
             <div>{{ task.title }}</div>
             <span class="fill"></span>
             <div>
-                <button mat-icon-button color="primary">
+                <button mat-icon-button color="primary" (click)="editTask($event, task)">
                     <mat-icon>edit</mat-icon>
                 </button>
-                <button mat-icon-button color="warn">
+                <button mat-icon-button color="warn" (click)="deleteTask($event, task.id)">
                     <mat-icon>delete</mat-icon>
                 </button>
             </div>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpResponse, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -28,5 +28,24 @@ export class TaskService {
               },
           } as any
       );
+  }
+
+  update(id, title):Observable<HttpResponse<any>>{
+      return this.http.put<any>(
+          `${this.url}/${id}`,
+          JSON.stringify({title : title}),
+          {
+              headers: {
+                  'Content-Type': 'application/json'
+              }
+          }
+      );
+  }
+
+  delete(id){
+      return this.http.delete(`${this.url}/${id}`, {
+          observe: 'response',
+          responseType: 'text'
+      });
   }
 }
